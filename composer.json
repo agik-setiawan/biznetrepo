@@ -1,0 +1,22 @@
+{
+    "name": "biznetrepo/biznetrepo",
+    "description": "Biznet Private repositories",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "agik setiawan",
+            "email": "setiawanagik@gmail.com"
+        }
+    ],
+    "homepage": "https://agik-setiawan@bitbucket.org/pendekarweb/repocomposer.git",
+    "autoload": {
+        "psr-4": {
+            "Biznetrepo\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.1",
+        "guzzlehttp/guzzle": ">=6.3"
+    }
+}
