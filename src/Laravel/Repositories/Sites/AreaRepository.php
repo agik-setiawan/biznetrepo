@@ -29,4 +29,14 @@ class AreaRepository implements AreaContract
         return $data;
     }
 
+    public function getCityAvailableInstance()
+    {
+        $datas = $this->getCityAvailable();
+        $response = "";
+        foreach ($datas as $key => $value) {
+            $response .= $value->CITY_NAME . " | ";
+        }
+
+        return $response;
+    }
 }
