@@ -19,10 +19,12 @@ class AreaRepository implements AreaContract
     {
         $data = collect($this->apiServices->getData("/v2/coverage-city", ""))->toArray();
         if ($data) {
-            if ($data['code'] == 400) {
-                $data = [];
+            if (isset($data['code'])) {
+                if ($data['code'] == 400) {
+                    $data = [];
+                }
             }
-            if ($data['data']) {
+            if (isset($data['data'])) {
                 $data = collect($data['data'])->toArray();
             }
         }
