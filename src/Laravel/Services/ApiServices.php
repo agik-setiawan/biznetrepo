@@ -50,7 +50,9 @@ class ApiServices implements ApiServicesContract
         try {
             $request = $client->post($url, [
                 'body' => json_encode($params),
-                'headers' => $this->headers
+                'headers' => $this->headers,
+                'timeout' => 10, // Response timeout
+                'connect_timeout' => 10, // Connection timeout
             ]);
             $response = json_decode($request->getBody());
             return $response;
@@ -73,7 +75,7 @@ class ApiServices implements ApiServicesContract
 
         $url = $this->host . $url;
         try {
-            $request = $client->get($url.'?'.$params, [
+            $request = $client->get($url . '?' . $params, [
                 'headers' => $this->headers
             ]);
             $response = json_decode($request->getBody());
